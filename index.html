@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flutter-Firebase-Webapp</title>
+    <link rel="icon" href="https://image.flaticon.com/icons/png/512/258/258295.png" type="image/icon type">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.js"></script>
+</head>
+
+<body>
+
+    <div class="ui segments animated selection divided list" id="cardsSegment"></div>
+
+    <div class="ui basic modal success">
+        <div class="ui icon header">
+            <i id="alertIcon"></i>
+            <h2 id="alertHeader"></h2>
+        </div>
+        <div class="ui content">
+            <h3 id="alertMessage"></h3>
+        </div>
+        <div class="actions">
+            <div class="ui red basic cancel inverted button">
+                <i class="checkmark icon"></i>
+                Pay Later
+            </div>
+            <div class="ui green ok inverted button">
+                <i class="checkmark icon"></i>
+                Pay Now
+            </div>
+        </div>
+    </div>
+
+    <div class="ui basic modal error">
+        <div class="ui icon header">
+            <i id="alertIcon"></i>
+            <h2 id="alertHeader"></h2>
+        </div>
+        <div class="ui content">
+            <h3 id="alertMessage"></h3>
+        </div>
+        <div class="actions">
+            <div class="ui green ok inverted button">
+                <i class="checkmark icon"></i>
+                Done
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-firestore.js"></script>
+
+    <script src="./js/config.js"></script>
+    <script src="./js/app.js"></script>
+
+</body>
+
+</html>
