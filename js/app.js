@@ -15,8 +15,8 @@ function onButtonClick(doc, name) {
     alertIconId.className = "check green circle icon";
     alertMessageId.textContent = "Your name has been sent successfully :)";
     alertHeaderId.textContent = "ThankYou";
-    payLaterId.textContent = "Pay Later"
     payNowId.style.display = "initial"
+    payLaterId.textContent = "Pay Later"
     payNowId.textContent = "Pay Now"
     $('.ui.basic.modal')
         .modal('show');
@@ -29,7 +29,6 @@ function showAlert() {
     alertHeaderId.textContent = "Error";
     payLaterId.textContent = "Done"
     payNowId.style.display = "none"
-
     $('.ui.basic.modal')
         .modal('show');
 }
