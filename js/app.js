@@ -4,6 +4,8 @@ const cardsSegmentId = document.getElementById('cardsSegment');
 const alertIconId = document.getElementById('alertIcon');
 const alertMessageId = document.getElementById('alertMessage');
 const alertHeaderId = document.getElementById('alertHeader');
+const payLaterId = document.getElementById('payLater');
+const payNowId = document.getElementById('payNow');
 
 // to add input field value to firestore as an array
 function onButtonClick(doc, name) {
@@ -13,7 +15,10 @@ function onButtonClick(doc, name) {
     alertIconId.className = "check green circle icon";
     alertMessageId.textContent = "Your name has been sent successfully :)";
     alertHeaderId.textContent = "ThankYou";
-    $('.ui.basic.modal.success')
+    payLaterId.textContent = "Pay Later"
+    payNowId.style.display = "initial"
+    payNowId.textContent = "Pay Now"
+    $('.ui.basic.modal')
         .modal('show');
 }
 
@@ -22,7 +27,10 @@ function showAlert() {
     alertIconId.className = "close red icon";
     alertMessageId.textContent = "Please fill the input field  :(";
     alertHeaderId.textContent = "Error";
-    $('.ui.basic.modal.error')
+    payLaterId.textContent = "Done"
+    payNowId.style.display = "none"
+
+    $('.ui.basic.modal')
         .modal('show');
 }
 
