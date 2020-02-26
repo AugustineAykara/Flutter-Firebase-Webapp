@@ -34,6 +34,7 @@ class _HomePageState extends State<HomePage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: Color.fromRGBO(18, 18, 18, 0),
         resizeToAvoidBottomPadding: false,
         floatingActionButton: floatingButton(),
         body: StreamBuilder(
@@ -51,9 +52,10 @@ class _HomePageState extends State<HomePage> {
                     direction: DismissDirection.startToEnd,
                     key: UniqueKey(),
                     child: Card(
+                      color: Colors.white12,
                       shape: RoundedRectangleBorder(
                         side: BorderSide(
-                          color: Colors.black,
+                          color: Colors.white12,
                         ),
                         borderRadius: BorderRadius.circular(12.0),
                       ),
@@ -112,13 +114,14 @@ class _HomePageState extends State<HomePage> {
   // FLOATING BUTTON WIDGET
   Widget floatingButton() {
     return FloatingActionButton(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.teal,
       child: Icon(Icons.add),
       onPressed: () {
         showDialog(
           context: context,
           builder: (BuildContext context) {
             return AlertDialog(
+              backgroundColor: Colors.teal[100],
               title: Text("Add Card"),
               content: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
@@ -198,6 +201,7 @@ class _HomePageState extends State<HomePage> {
     return Text(
       cards['subjectName'].toUpperCase(),
       style: TextStyle(
+          color: Colors.white,
           fontSize: 22,
           fontWeight: FontWeight.bold,
           decoration: TextDecoration.underline),
@@ -209,9 +213,11 @@ class _HomePageState extends State<HomePage> {
     return Text(
       "Rs." + cards['cost'].toString(),
       style: TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
-          fontStyle: FontStyle.italic),
+        color: Colors.white,
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+        fontStyle: FontStyle.italic,
+      ),
     );
   }
 
@@ -219,7 +225,11 @@ class _HomePageState extends State<HomePage> {
   Widget descriptionText(cards) {
     return Text(
       cards['description'],
-      style: TextStyle(fontSize: 18, fontStyle: FontStyle.italic),
+      style: TextStyle(
+        color: Colors.white,
+        fontSize: 18,
+        fontStyle: FontStyle.italic,
+      ),
     );
   }
 
