@@ -218,7 +218,7 @@ class _HomePageState extends State<HomePage> {
 // CARD TEXT STYLE FOR DESCRIPTION
   Widget descriptionText(cards) {
     return Text(
-      'P.S. : ' + cards['description'],
+      cards['description'],
       style: TextStyle(fontSize: 18, fontStyle: FontStyle.italic),
     );
   }

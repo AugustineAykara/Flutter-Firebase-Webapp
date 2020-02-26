@@ -51,7 +51,7 @@ function listCards(doc) {
 
         let description = document.createElement('h4');
         description.className = "content";
-        description.textContent = "P.S. : " + doc.data().description;
+        description.textContent = doc.data().description;
 
     let rightContent = document.createElement('div');
     rightContent.className = "right floated content";
