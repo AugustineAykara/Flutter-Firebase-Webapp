@@ -29,11 +29,12 @@ class _ListStudentsState extends State<ListStudents> {
         .snapshots();
 
     return Scaffold(
+      backgroundColor: Color.fromRGBO(18, 18, 18, 0),
       appBar: AppBar(
         title: Text(
           '${widget.subjectName}'.toUpperCase(),
         ),
-        backgroundColor: Colors.black,
+        backgroundColor: Color.fromRGBO(18, 18, 18, 0),
       ),
       body: StreamBuilder(
         stream: studentNameSnapshot,
@@ -56,10 +57,15 @@ class _ListStudentsState extends State<ListStudents> {
     return ListView.builder(
       itemCount: studentNameList != null ? studentNameList.length : 0,
       itemBuilder: (context, index) {
-        return ListTile(
-          leading: listLeadingText(index),
-          title: listTitleText(studentNameList[index]),
-          trailing: listTrailingText(studentNameList[index], context),
+        studentNameList.sort();
+        return Container(
+          color: Colors.white10,
+          margin: EdgeInsets.all(3),
+          child: ListTile(
+            leading: listLeadingText(index),
+            title: listTitleText(studentNameList[index]),
+            trailing: listTrailingText(studentNameList[index], context),
+          ),
         );
       },
     );
@@ -70,6 +76,7 @@ class _ListStudentsState extends State<ListStudents> {
     return Text(
       (value + 1).toString() + ".",
       style: TextStyle(
+        color: Colors.white,
         fontSize: 18,
         fontWeight: FontWeight.bold,
       ),
@@ -81,6 +88,7 @@ class _ListStudentsState extends State<ListStudents> {
     return Text(
       name.toUpperCase(),
       style: TextStyle(
+        color: Colors.white,
         fontSize: 18,
         fontWeight: FontWeight.bold,
       ),
