@@ -99,7 +99,6 @@ class _ListStudentsState extends State<ListStudents> {
           ),
         ),
         Icon(Icons.attach_money,color: Colors.green),
-
       ],
     );
   }
