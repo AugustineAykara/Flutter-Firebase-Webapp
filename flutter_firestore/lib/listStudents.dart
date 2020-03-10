@@ -21,6 +21,14 @@ class ListStudents extends StatefulWidget {
 }
 
 class _ListStudentsState extends State<ListStudents> {
+  Color listColor;
+
+  @override
+  void initState() {
+    super.initState();
+    listColor = Colors.white10;
+  }
+
   @override
   Widget build(BuildContext context) {
     Stream<DocumentSnapshot> studentNameSnapshot = Firestore.instance
@@ -59,7 +67,7 @@ class _ListStudentsState extends State<ListStudents> {
       itemBuilder: (context, index) {
         studentNameList.sort();
         return Container(
-          color: Colors.white10,
+          color: listColor,
           margin: EdgeInsets.all(3),
           child: ListTile(
             leading: listLeadingText(index),
@@ -85,14 +93,27 @@ class _ListStudentsState extends State<ListStudents> {
 
 // NAME TEXT STYLE
   Widget listTitleText(name) {
-    return Text(
-      name.toUpperCase(),
-      style: TextStyle(
-        color: Colors.white,
-        fontSize: 18,
-        fontWeight: FontWeight.bold,
-      ),
-    );
+    // print(name.substring(name.length - 1));
+    if (name.substring(name.length - 1) == '\$') {
+      return Text(
+        name.toUpperCase(),
+        style: TextStyle(
+          color: Colors.green,
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+        ),
+      );
+    }
+    else {
+      return Text(
+        name.toUpperCase(),
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+        ),
+      );
+    }
   }
 
 // TRAILING TEXT STYLE
