@@ -94,26 +94,16 @@ class _ListStudentsState extends State<ListStudents> {
 // NAME TEXT STYLE
   Widget listTitleText(name) {
     // print(name.substring(name.length - 1));
-    if (name.substring(name.length - 1) == '\$') {
-      return Text(
-        name.toUpperCase(),
-        style: TextStyle(
-          color: Colors.green,
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
-        ),
-      );
-    }
-    else {
-      return Text(
-        name.toUpperCase(),
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
-        ),
-      );
-    }
+    return Text(
+      name.toUpperCase(),
+      style: TextStyle(
+        color: name.substring(name.length - 1) == '\$'
+            ? Colors.green
+            : Colors.white,
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+      ),
+    );
   }
 
 // TRAILING TEXT STYLE
